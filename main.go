@@ -4,14 +4,12 @@ import (
 	"context"
 	"flag"
 	"fmt"
-	"log"
-	"net"
-
 	"google.golang.org/grpc"
-	"google.golang.org/grpc/reflection"
-
 	ecpb "google.golang.org/grpc/examples/features/proto/echo"
 	hwpb "google.golang.org/grpc/examples/helloworld/helloworld"
+	"google.golang.org/grpc/reflection"
+	"log"
+	"net"
 )
 
 var port = flag.Int("port", 50051, "the port to serve on")

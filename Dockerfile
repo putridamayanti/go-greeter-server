@@ -2,10 +2,10 @@ FROM golang:buster as build
 
 WORKDIR /go/src/greeter-server
 
-RUN curl -o main.go https://github.com/grpc/grpc-go/blob/master/examples/features/reflection/server/main.go && \
-  go mod init greeter-server && \
-  go mod tidy && \
-  go build -o /greeter-server main.go
+RUN curl -o main.go https://github.com/putridamayanti/go-greeter-server/blob/main/main.go
+RUN go mod init greeter-server
+RUN go mod tidy
+RUN go build -o /greeter-server main.go
 
 FROM gcr.io/distroless/base-debian10
 
